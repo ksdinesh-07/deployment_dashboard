@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-rocket"></i> Simple Web App</h1>
+            <p class="subtitle">Docker + Jenkins + Azure Pipeline</p>
+        </div>
+        
+        <div class="card">
+            <h2><i class="fas fa-play-circle"></i> Interactive Demo</h2>
+            <p id="message" class="message-box">Click the button to see CI/CD pipeline messages!</p>
+            
+            <div class="button-group">
+                <button onclick="changeMessage()" class="btn-primary">
+                    <i class="fas fa-sync-alt"></i> Generate Message
+                </button>
+                <button onclick="showDeploymentInfo()" class="btn-secondary">
+                    <i class="fas fa-cloud-upload-alt"></i> Deployment Info
+                </button>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <span>Clicks: <strong id="counter">0</strong></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Build: <strong id="build">v1.0.0</strong></span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Status: <strong id="status" class="status-healthy">Healthy</strong></span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pipeline-card">
+            <h3><i class="fas fa-project-diagram"></i> CI/CD Pipeline Status</h3>
+            <div class="pipeline-steps">
+                <div class="step active">
+                    <div class="step-icon"><i class="fas fa-code"></i></div>
+                    <div class="step-text">Code Commit</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-docker"></i></div>
+                    <div class="step-text">Docker Build</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="step-text">Tests</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-cloud"></i></div>
+                    <div class="step-text">Azure Deploy</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-box">
+                <i class="fas fa-docker"></i>
+                <h4>Dockerized</h4>
+                <p>Containerized application for consistent deployment</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-cogs"></i>
+                <h4>Jenkins CI/CD</h4>
+                <p>Automated build and deployment pipeline</p>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-cloud"></i>
+                <h4>Azure Hosted</h4>
+                <p>Deployed on Azure Free Tier</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Project: Simple Jenkins Pipeline | Created by: <strong>Dinesh</strong></p>
+            <p class="timestamp">Last updated: <span id="timestamp">Loading...</span></p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
